@@ -3,13 +3,10 @@ server:
 spring:
   cloud:
     nacos:
-      server-addr: localhost:8848
       discovery:
-        cluster-name: SH
+        cluster-name: SH #集群配置
         # namespace: 1a4ceb89-e3cf-4837-b17f-cb88ca6351fb 配置namespace
         # ephemeral: false 配置ephemeral 也就是非临时实例
-  application:
-    name: userServer
   datasource:
     url: jdbc:mysql://localhost:3306/test
     username: root
