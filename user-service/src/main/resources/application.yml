@@ -25,3 +25,15 @@ logging:
 #  client:
 #    service-url:
 #      defaultZone: http://localhost:10086/eureka
+feign:
+  client:
+    config:
+      default: #default全局的配置
+        logger-level: BASIC #日志级别，basic就是基本的请求和响应
+  httpclient:
+    enabled: true
+    max-connections: 200
+    max-connections-per-route: 50
+    # 上面三个都是默认的值 启动对于httpclient的支持
+    # 最大连接数
+    # 每个路径的最大连接数

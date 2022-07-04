@@ -1,5 +1,6 @@
 package cn.itcast.order.service;
 
+import cn.itcast.order.clients.userClient;
 import cn.itcast.order.mapper.OrderMapper;
 import cn.itcast.order.pojo.Order;
 import cn.itcast.order.pojo.User;
@@ -14,6 +15,21 @@ public class OrderService {
     @Autowired
     private OrderMapper orderMapper;
 
+
+    /**
+     * 使用FeignClient
+     */
+    @Autowired
+    private userClient userClient;
+    public Order useFeignClientQueryOrderById(Long orderId){
+        Order order = orderMapper.findById(orderId);
+        order.setUser(userClient.findById(order.getUserId()));
+        return order;
+    }
+
+    /**
+     * 使用默认的restTemplate
+     */
     @Autowired
     private RestTemplate restTemplate;
     public Order queryOrderById(Long orderId) {

@@ -20,4 +20,11 @@ public class OrderController {
         // 根据id查询订单并返回
         return orderService.queryOrderById(orderId);
     }
+
+    @GetMapping("feign/{orderId}")
+    public Order UseFeignQueryOrderByUserId(@PathVariable("orderId") Long orderId) {
+        // 根据id查询订单并返回
+        return orderService.useFeignClientQueryOrderById(orderId);
+    }
+
 }
