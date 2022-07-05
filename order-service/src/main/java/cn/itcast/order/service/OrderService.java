@@ -19,7 +19,7 @@ public class OrderService {
      * 使用FeignClient
      */
     @Autowired
-    private cn.itcast.feign.clients.userClient userClient;
+    private userClient userClient;
     public Order useFeignClientQueryOrderById(Long orderId){
         Order order = orderMapper.findById(orderId);
         order.setUser(userClient.findById(order.getUserId()));

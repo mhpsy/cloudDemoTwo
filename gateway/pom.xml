@@ -9,10 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>feign-api</artifactId>
+    <artifactId>gateway</artifactId>
     <packaging>war</packaging>
 
-    <name>feign-api Maven Webapp</name>
+    <name>gateway Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -22,16 +22,21 @@
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
-
     <dependencies>
+        <!--nacos服务注册发现依赖-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!--网关gateway依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>feign-api</finalName>
+        <finalName>gateway</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
