@@ -1,11 +1,10 @@
 package cn.itcast.order.service;
 
-import cn.itcast.order.clients.userClient;
+import cn.itcast.feign.clients.userClient;
+import cn.itcast.feign.pojo.User;
 import cn.itcast.order.mapper.OrderMapper;
 import cn.itcast.order.pojo.Order;
-import cn.itcast.order.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,7 +19,7 @@ public class OrderService {
      * 使用FeignClient
      */
     @Autowired
-    private userClient userClient;
+    private cn.itcast.feign.clients.userClient userClient;
     public Order useFeignClientQueryOrderById(Long orderId){
         Order order = orderMapper.findById(orderId);
         order.setUser(userClient.findById(order.getUserId()));
