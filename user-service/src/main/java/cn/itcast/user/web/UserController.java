@@ -1,6 +1,5 @@
 package cn.itcast.user.web;
 
-import cn.itcast.user.config.PatternProperties;
 import cn.itcast.user.pojo.User;
 import cn.itcast.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -18,20 +17,20 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private PatternProperties patternProperties;
+//    @Autowired
+//    private PatternProperties patternProperties;
 
-    @Value("${mhpsy.name}")
-    private String name;
+//    @Value("${mhpsy.name}")
+//    private String name;
 
-    @GetMapping("/readConfig")
-    public String readConfig(){
-        return name;
-    }
-    @GetMapping("/readConfig2")
-    public PatternProperties readConfig2(){
-        return patternProperties;
-    }
+//    @GetMapping("/readConfig")
+//    public String readConfig(){
+//        return name;
+//    }
+//    @GetMapping("/readConfig2")
+//    public PatternProperties readConfig2(){
+//        return patternProperties;
+//    }
 
     /**
      * 路径： /user/110

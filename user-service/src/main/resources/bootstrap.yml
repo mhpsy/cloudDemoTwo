@@ -5,6 +5,6 @@ spring:
     active: dev #开发环境这里是dev
   cloud:
     nacos:
-      server-addr: localhost:8848 # Nacos地址
+      server-addr: 192.168.11.233:8848 # Nacos地址
       config:
         file-extension: yaml # 文件后缀
